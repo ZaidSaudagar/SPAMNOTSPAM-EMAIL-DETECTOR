@@ -10,7 +10,7 @@ import os
 def train_and_save_base_model():
     # 1. Load Dataset
     # Using the local file 'spam.csv'
-    dataset_path = os.path.join(os.path.dirname(__file__), '..', 'spam.csv')
+    dataset_path = os.path.join(os.path.dirname(__file__), '..', 'dataset', 'spam.csv')
     df = pd.read_csv(dataset_path, encoding='ISO-8859-1')
 
     # 2. Preprocess
@@ -29,7 +29,7 @@ def train_and_save_base_model():
     clf.fit(X_train, y_train)
 
     # 5. Save the entire pipeline (includes vectorizer and model)
-    models_dir = os.path.join(os.path.dirname(__file__), 'models')
+    models_dir = os.path.join(os.path.dirname(__file__), '..', 'server', 'models')
     if not os.path.exists(models_dir):
         os.makedirs(models_dir)
         

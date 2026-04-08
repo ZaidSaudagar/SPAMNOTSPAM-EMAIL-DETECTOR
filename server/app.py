@@ -24,7 +24,7 @@ app.add_middleware(
 )
 
 # Load the base model
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "brain", "spam_model.joblib")
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "models", "spam_model.joblib")
 if not os.path.exists(MODEL_PATH):
     raise FileNotFoundError(f"Model file not found at {MODEL_PATH}. Please run train_model.py first.")
 
